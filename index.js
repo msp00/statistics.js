@@ -1,4 +1,4 @@
-function meanArray(arr) {
+const mean = (arr) => {
   if (arr.length === 0) {
     return null;
   }
@@ -9,47 +9,53 @@ function meanArray(arr) {
   }
 
   return result / arr.length;
-}
+};
 
-function meanCenter(arr, meanValue) {
+const meanCenter = (arr, meanValue) => {
   const result = [];
   for (let i = 0; i < arr.length; i++) {
     result.push(arr[i] - meanValue);
   }
 
   return result;
-}
+};
 
-function squareArray(arr) {
+const squareArray = (arr) => {
   const result = [];
   for (let i = 0; i < arr.length; i++) {
     result.push(arr[i] * arr[i]);
   }
 
   return result;
-}
+};
 
-function sumArray(arr) {
+const sumArray = (arr) => {
   let result = 0;
   for (let i = 0; i < arr.length; i++) {
     result += arr[i];
   }
 
   return result;
-}
+};
 
-function getVariance(dataset) {
-  if (dataset.length === 0) return null;
-
-  const meanValue = meanArray(dataset);
+const getVariance = (dataset) => {
+  const meanValue = mean(dataset);
   const center = meanCenter(dataset, meanValue);
   const squares = squareArray(center);
   const summedArray = sumArray(squares);
 
   return summedArray / dataset.length;
-}
+};
+
+const getStandardDeviation = (dataset) => {
+  if (dataset.length === 0) return null;
+
+  const varianceValue = getVariance(dataset);
+  return Math.sqrt(varianceValue);
+};
 
 module.exports = {
-  meanArray,
+  mean,
   getVariance,
+  getStandardDeviation,
 };
