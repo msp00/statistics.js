@@ -1,0 +1,20 @@
+{
+  "name": "statistics",
+  "version": "1.0.0",
+  "description": "This is a library for me to learn basic statistics.  It is not optimized for large datasets.",
+  "homepage": "https://github.com/msp00/statistics.js#readme",
+  "bugs": {
+    "url": "https://github.com/msp00/statistics.js/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/msp00/statistics.js.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
