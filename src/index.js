@@ -38,20 +38,20 @@ const sumArray = (arr) => {
   return result;
 };
 
-const getVariance = (dataset) => {
+const getVariance = (dataset, round = 2) => {
   const meanValue = mean(dataset);
   const center = meanCenter(dataset, meanValue);
   const squares = squareArray(center);
   const summedArray = sumArray(squares);
 
-  return summedArray / dataset.length;
+  return Number((summedArray / dataset.length).toFixed(round));
 };
 
-const getStandardDeviation = (dataset) => {
+const getStandardDeviation = (dataset, round = 2) => {
   if (dataset.length === 0) return null;
 
   const varianceValue = getVariance(dataset);
-  return Math.sqrt(varianceValue);
+  return Number(Math.sqrt(varianceValue).toFixed(round));
 };
 
 module.exports = {
